@@ -23,9 +23,11 @@ public class RangePrinter {
             end = temp;
         }
 
-        // Print numbers between start and end (exclusive)
+        // Print only odd numbers between start and end (exclusive)
         for (int i = start + 1; i < end; i++) {
-            System.out.println(i);
+            if (i % 2 != 0) {  // Check if odd
+                System.out.println(i);
+            }
         }
     }
 }
