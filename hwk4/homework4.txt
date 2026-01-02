@@ -1,1 +1,190 @@
+STEP A:
+
+git config --global user.name "Yazan Batikhi"
+git config --global user.email "23SOFT1078@isik.edu.tr"
+git config --global core.editor nano
+
+C:\Users\emy_b>git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=schannel
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.name=Yazan Batikhi
+user.email=23SOFT1078@isik.edu.tr
+core.editor=nano
+
+STEP B:
+
+C:\Users\emy_b\SoftHomework4>dir
+ Volume in drive C has no label.
+ Volume Serial Number is F046-540F
+
+ Directory of C:\Users\emy_b\SoftHomework4
+
+01/02/2026  08:18 PM    <DIR>          .
+01/02/2026  08:18 PM    <DIR>          ..
+01/02/2026  08:18 PM    <DIR>          hwk4
+01/02/2026  08:18 PM                37 README.md
+               1 File(s)             37 bytes
+               3 Dir(s)  23,189,446,656 bytes free
+
+STEP C:
+
+[Department of Software Engineering – Işık University](https://www.isikun.edu.tr/akademik/muhendislik-fakultesi/bolumler-ve-programlar/bilgisayar-muhendisligi/programlar/lisans-programi/yazilim-muhendisligi)
+
+STEP D:
+
+Rules copied from the Java.gitignore repo
+
+
+STEP F:
+
+C:\Users\emy_b\SoftHomework4>git log feature-1
+commit 7abc30d68b9e52de62c1312fdcd29e35f46b3dc0 (HEAD -> feature-1)
+Author: Yazan Batikhi <23SOFT1078@isik.edu.tr>
+Date:   Fri Jan 2 20:26:24 2026 +0300
+
+    Satisfying requirement one
+
+commit ef2b382feb34c1fbb76da37ceaf060097d908f90 (main)
+Author: Yazan Batikhi <23SOFT1078@isik.edu.tr>
+Date:   Fri Jan 2 20:23:15 2026 +0300
+
+    Setting up gitignore
+
+commit 9c7c04e4212f1fc0384567af74bf5fa6c90fb9ae (origin/main, origin/HEAD)
+Author: Yazan-Bat <23SOFT1078@isik.edu.tr>
+Date:   Fri Jan 2 20:16:44 2026 +0300
+
+    Create homework4.txt
+
+commit d19d3c56a8611e4e87d6b2eafffdc05cfff1fdc4
+Author: Yazan-Bat <23SOFT1078@isik.edu.tr>
+Date:   Fri Jan 2 20:16:20 2026 +0300
+
+    Initial commit
+
+C:\Users\emy_b\SoftHomework4>git ls-tree -r feature-1 --name-only hmk1
+hmk1/Printer.java
+
+C:\Users\emy_b\SoftHomework4>git ls-tree -r main --name-only hmk1
+(None)
+
+
+STEP J:
+
+C:\Users\emy_b\SoftHomework4>git log feature-2
+commit 34b05e39461d234813f9e5b69813630eef3e7d2c (HEAD -> feature-2)
+Author: Yazan Batikhi <23SOFT1078@isik.edu.tr>
+Date:   Fri Jan 2 20:37:00 2026 +0300
+
+    satisfying requirement chante two
+
+commit 7abc30d68b9e52de62c1312fdcd29e35f46b3dc0 (main, feature-3, feature-1)
+Author: Yazan Batikhi <23SOFT1078@isik.edu.tr>
+Date:   Fri Jan 2 20:26:24 2026 +0300
+
+    Satisfying requirement one
+
+commit ef2b382feb34c1fbb76da37ceaf060097d908f90
+Author: Yazan Batikhi <23SOFT1078@isik.edu.tr>
+Date:   Fri Jan 2 20:23:15 2026 +0300
+
+    Setting up gitignore
+
+commit 9c7c04e4212f1fc0384567af74bf5fa6c90fb9ae (origin/main, origin/HEAD)
+Author: Yazan-Bat <23SOFT1078@isik.edu.tr>
+Date:   Fri Jan 2 20:16:44 2026 +0300
+
+    Create homework4.txt
+
+commit d19d3c56a8611e4e87d6b2eafffdc05cfff1fdc4
+Author: Yazan-Bat <23SOFT1078@isik.edu.tr>
+Date:   Fri Jan 2 20:16:20 2026 +0300
+
+    Initial commit
+
+
+Step M:
+
+C:\Users\emy_b\SoftHomework4>git diff main feature-1
+diff --git a/hmk1/Printer.java b/hmk1/Printer.java
+index 0e1f176..e3fd9cc 100644
+--- a/hmk1/Printer.java
++++ b/hmk1/Printer.java
+@@ -23,17 +23,9 @@ public class RangePrinter {
+             end = temp;
+         }
+
+-<<<<<<< HEAD
+-        // Print only odd numbers between start and end (exclusive)
++        // Print numbers between start and end (exclusive)
+         for (int i = start + 1; i < end; i++) {
+-            if (i % 2 != 0) {  // Check if odd
+-=======
+-        // Print only even numbers between start and end (exclusive)
+-        for (int i = start + 1; i < end; i++) {
+-            if (i % 2 == 0) {  // Check if even
+->>>>>>> feature-3
+-                System.out.println(i);
+-            }
++            System.out.println(i);
+         }
+     }
+ }
+\ No newline at end of file
+
+C:\Users\emy_b\SoftHomework4>git diff main feature-2
+diff --git a/hmk1/Printer.java b/hmk1/Printer.java
+index 0e1f176..9c92822 100644
+--- a/hmk1/Printer.java
++++ b/hmk1/Printer.java
+@@ -23,15 +23,9 @@ public class RangePrinter {
+             end = temp;
+         }
+
+-<<<<<<< HEAD
+         // Print only odd numbers between start and end (exclusive)
+         for (int i = start + 1; i < end; i++) {
+             if (i % 2 != 0) {  // Check if odd
+-=======
+-        // Print only even numbers between start and end (exclusive)
+-        for (int i = start + 1; i < end; i++) {
+-            if (i % 2 == 0) {  // Check if even
+->>>>>>> feature-3
+                 System.out.println(i);
+             }
+         }
+
+C:\Users\emy_b\SoftHomework4>git diff main feature-3
+diff --git a/hmk1/Printer.java b/hmk1/Printer.java
+index 0e1f176..6149479 100644
+--- a/hmk1/Printer.java
++++ b/hmk1/Printer.java
+@@ -23,15 +23,9 @@ public class RangePrinter {
+             end = temp;
+         }
+
+-<<<<<<< HEAD
+-        // Print only odd numbers between start and end (exclusive)
+-        for (int i = start + 1; i < end; i++) {
+-            if (i % 2 != 0) {  // Check if odd
+-=======
+         // Print only even numbers between start and end (exclusive)
+         for (int i = start + 1; i < end; i++) {
+             if (i % 2 == 0) {  // Check if even
+->>>>>>> feature-3
+                 System.out.println(i);
+             }
+         }
+
 
