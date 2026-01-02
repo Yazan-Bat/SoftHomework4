@@ -23,9 +23,15 @@ public class RangePrinter {
             end = temp;
         }
 
+<<<<<<< HEAD
         // Print only odd numbers between start and end (exclusive)
         for (int i = start + 1; i < end; i++) {
             if (i % 2 != 0) {  // Check if odd
+=======
+        // Print only even numbers between start and end (exclusive)
+        for (int i = start + 1; i < end; i++) {
+            if (i % 2 == 0) {  // Check if even
+>>>>>>> feature-3
                 System.out.println(i);
             }
         }
